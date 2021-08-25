@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script src="~/Scripts/jquery-3.6.0.js" type="text/javascript"></script>
+<div style="border:1px solid blue; height:100px;" id="texta">
+
+    </div><br /><br/>
+<input type="button" value="Press to show data" id="btn" />
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btn").click(function (){
+            jQuery.get('../FilesToRead/Student.txt', function (data) {
+                $('#texta').text(data)
+            });
+        });
+    });
+</script>
